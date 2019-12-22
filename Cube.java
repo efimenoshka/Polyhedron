@@ -13,8 +13,6 @@ public class Cube {
         facets[4] = new Facet(new R3Vector(0,1,0), new R3Vector(1,1,0) ,new R3Vector(1,1,1) ,new R3Vector(0,1,1), Color.GREEN);
         facets[5] = new Facet(new R3Vector(0,0,1), new R3Vector(0,1,1) ,new R3Vector(1,1,1) ,new R3Vector(1,0,1), Color.MAGENTA);
 
-
-
     }
 
     public void outCu(){
@@ -30,10 +28,12 @@ public class Cube {
     }
 
     public void transCu(double ux, double uy, double uz){
-        for (int i = 0; i < facets.length; i++) { facets[i].rotate(ux,uy,uz);}
+        for (int i = 0; i < facets.length; i++) { facets[i].trans(ux,uy,uz);}
     }
 
     public void draw(Graphics2D g){
         for (int i = 0; i < facets.length; i++) { facets[i].draw(g);}
     }
+
+    public void Persdraw(Graphics2D g, int t){ for (int i = 0; i < facets.length; i++) { facets[i].Persdraw(g, t);}}
 }

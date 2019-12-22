@@ -55,43 +55,33 @@ public class R3Vector {
     }
 
     public void rotateZ (double u){
-        double d = u * Math.PI /180;
-        double x1 = x;
-        x = x1* Math.cos(d) - y* Math.sin(d);
-        y = -x1* Math.sin(d) + y* Math.cos(d);
+        double rad = u * Math.PI /180;
+        double x1 = x; double y1 = y;
+        x = x1 * Math.cos(rad) + y1 * Math.sin(rad);
+        y = y1 * Math.cos(rad) - x1 * Math.sin(rad);
     }
 
     public void rotateY (double u){
-        double d = u * Math.PI /180;
-        double x1 = x;
-        x = x1* Math.cos(d) + z* Math.sin(d);
-        z = -x1* Math.sin(d) + z* Math.cos(d);
+        double rad = u * Math.PI /180;
+        double x1 = x; double z1 = z;
+        x = x1 * Math.cos(rad) + z1 * Math.sin(rad);
+        z = z1 * Math.cos(rad) - x1 * Math.sin(rad);
     }
 
     public void rotateX (double u){
-        double d = u * Math.PI /180;
-        double z1 = z;
-        z = z1* Math.cos(d) - y* Math.sin(d);
-        y = z1* Math.sin(d) + y* Math.cos(d);
-    }
-
-    public void rotate(char k, double u){
-        switch (k){
-            case 'x':
-                rotateX(u);
-                break;
-            case 'y':
-                rotateY(u);
-                break;
-            case 'z':
-                rotateZ(u);
-                break;
-        }
+        double rad = u * Math.PI /180;
+        double y1 = y; double z1 = z;
+        y = y1 * Math.cos(rad) + z1 * Math.sin(rad);
+        z = z1 * Math.cos(rad) - y1 * Math.sin(rad);
     }
 
     public void rotateAll(double u, double v, double t){
         rotateX(u);
         rotateY(v);
         rotateZ(t);
+    }
+
+    public static R3Vector toVec(R3Vector v1, R3Vector v2){
+        return new R3Vector(v2.x - v1.x, v2.y-v1.y, v2.z-v1.z);
     }
 }

@@ -27,12 +27,8 @@ public class Viewer extends JFrame {
         g2d.drawLine(0-getWidth()/2,0,getWidth()/2,0);
         g2d.drawLine(0,0-getHeight()/2,0,getHeight()/2);
 
-        cube.draw(g2d);
-
-
-
-
+        //cube.draw(g2d);
+        cube.Persdraw(g2d, 1000);
     }
-
 
 }

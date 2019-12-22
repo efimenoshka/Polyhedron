@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,8 +20,9 @@ public class Main {
 
         System.out.println("-------------");
 
-        Facet f = new Facet(new R3Vector(0,0,0), new R3Vector(0,1,0), new R3Vector(1,1,0), new R3Vector(1,0,0));
+        Facet f = new Facet(new R3Vector(0,0,0), new R3Vector(0,1,0), new R3Vector(1,1,0), new R3Vector(1,0,0), Color.black);
         f.out();
+        f.normal().out();
 
         System.out.println("");
 
@@ -37,7 +40,8 @@ public class Main {
 
         Cube c = new Cube();
         c.mashCu(100);
-        c.transCu(30,30,0);
+        c.transCu(-50,-50,-50);
+        c.rotateCu(30,120,110);
 
         System.out.println("-------------");
 
